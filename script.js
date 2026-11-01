@@ -198,3 +198,12 @@ for(i=0;i<30;i++)g.appendChild(m('gst','--x:'+(r()*98).toFixed(1)+'%;--y:'+(r()*
 for(i=0;i<7;i++){var f=m('sf','--x:'+(i*14+r()*6).toFixed(1)+'%;--y:'+(i%2?2:8+r()*10).toFixed(0)+'%;--s:'+(46+r()*40|0)+'px;--d:'+(4+r()*3).toFixed(1)+'s;--dl:-'+(r()*5).toFixed(1)+'s');f.innerHTML='<i style="--r:'+(r()*70|0)+'deg"></i>';s.appendChild(f);}
 for(i=0;i<16;i++)s.appendChild(m('bb','--x:'+(r()*96).toFixed(1)+'%;--s:'+(8+r()*18|0)+'px;--d:'+(9+r()*9|0)+'s;--dl:-'+(r()*14|0)+'s'));
 document.body.appendChild(g);document.body.appendChild(s);})();
+
+(function(){var Q=function(){return [].slice.call(document.querySelectorAll('.qbtn'));},qi=0;
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.qbtn');if(b)qi=Q().indexOf(b);},true);
+function go(d){var m=document.querySelector('.pl-modal'),x=m&&m.querySelector('.pl-close');if(!x)return;x.click();var n=Q();setTimeout(function(){n[(qi+d+n.length)%n.length].click();},300);}
+new MutationObserver(function(ms){ms.forEach(function(r){[].forEach.call(r.addedNodes,function(n){if(!n.querySelector||!n.classList.contains('pl-modal')||!n.querySelector('.pl-body')||n.querySelector('.pl-stage'))return;
+var t=n.querySelector('.pl-title'),bd=n.querySelector('.pl-body'),im=document.createElement('img'),f=document.createElement('div');im.className='av';im.src='sd2.jpg';im.alt='Indira';t.parentNode.insertBefore(im,t);
+f.className='pl-ft';f.innerHTML='<button type="button" data-d="-1">&larr; Sebelumnya</button><button type="button" class="cp">Salin ringkasan</button><button type="button" data-d="1">Berikutnya &rarr;</button>';bd.appendChild(f);
+f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.d)go(+b.dataset.d);else{try{navigator.clipboard.writeText(bd.innerText.replace(/Sebelumnya.*$/s,'').trim());b.textContent='Tersalin ✓';}catch(x){}}});});});}).observe(document.body,{childList:true});
+document.addEventListener('keydown',function(e){if(document.querySelector('.pl-modal .pl-body')&&!document.querySelector('.pl-stage')){if(e.key==='ArrowLeft')go(-1);if(e.key==='ArrowRight')go(1);}});})();
