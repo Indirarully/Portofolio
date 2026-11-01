@@ -291,3 +291,34 @@ body[data-theme=formal] .roles,body[data-theme=formal] .roles *{font-family:Popp
 body[data-theme=formal] .theme-sw{border:1px solid #D9DEE7;border-radius:12px;box-shadow:0 4px 14px rgba(31,58,95,.12)}
 body[data-theme=formal] .theme-sw button{font-family:Poppins,sans-serif;font-size:.78rem;border:0;border-radius:8px}
 body[data-theme=formal] .theme-sw button[aria-pressed=true]{background:#1F3A5F}
+
+html{font-size:112.5%}
+.spot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}.spot{padding:28px}.spot h3{font-size:1.5rem;margin:0 0 14px}
+.spot-i{display:flex;gap:16px;align-items:baseline;padding:10px 0;border-top:1px solid rgba(0,0,0,.1)}.spot-i b{font-size:1.9rem;min-width:7.5rem;color:var(--pink)}.spot-i span{font-size:1.15rem;line-height:1.5}
+.spot-note{font-size:1.25rem;font-weight:700;margin-top:20px}
+.qbtn small,.stat span,.hint{font-size:1rem}
+body[data-bg="game"][data-theme="formal"] .chip,body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .chip{font-size:.92rem;padding:7px 14px}
+.pl-body,.pl-body li,.pl-body p{font-size:1.2rem;line-height:1.7}.pl-title{font-size:1.6rem}
+.pl-box{border-top:12px solid var(--t)}.pl-body b{color:var(--t)}.pl-body li::marker{color:var(--t)}
+body[data-bg="game"][data-theme="formal"] .pl-modal{--t:#1F3A5F}body[data-bg="game"][data-theme="pixel"] .pl-modal{--t:#4C6FFF}
+.tree{image-rendering:auto}.petals{display:none;position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.petal{position:absolute;top:-30px;width:var(--s);height:var(--s);background:linear-gradient(135deg,#FFD6E4,#F58FB3);border-radius:150% 0 150% 0;opacity:.85;animation:pfall var(--d) linear infinite;animation-delay:var(--dl)}
+@keyframes pfall{0%{transform:translate(0,-5vh) rotate(0)}50%{transform:translate(60px,55vh) rotate(200deg)}100%{transform:translate(-30px,108vh) rotate(420deg)}}
+body[data-accent=sakura] .tree,body[data-accent=sakura] .petals{display:block}.tree{width:min(34vw,330px)}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"]{--pink:#E0457F;--aq:#B77AD6;--lil:#D97A9E;--sky:#E88FB0}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"]::before{background:radial-gradient(circle at 12% 18%,rgba(255,255,255,.9),transparent 40%),radial-gradient(circle at 88% 70%,rgba(255,214,230,.9),transparent 45%),linear-gradient(180deg,#FFF1F6,#FFE3EE 55%,#F8D6E6)}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .glass{border:2px solid #F5BCD1;box-shadow:0 10px 30px rgba(224,69,127,.16)}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .btn{background:linear-gradient(135deg,#E0457F,#F27BA5);border-radius:999px}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .btn.ghost{background:#fff;color:#B83266;border:2px solid #E0457F}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] h1.d3,body[data-bg="game"][data-theme="formal"][data-accent="sakura"] h2.d3,body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-title{color:#B83266}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] footer{background:#8A2F58}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .prog i{background:linear-gradient(90deg,#E0457F,#F7A6C2)}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .top8 li::before{background:#E0457F}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal,body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .lb{background:rgba(120,30,70,.55)}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal.theme-pink{--t:#E0457F}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal.theme-sky{--t:#7C5CE0}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal.theme-lil{--t:#C2437F}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal.theme-aq{--t:#1FA39A}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal.theme-lime{--t:#4CAF50}body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal.theme-gold{--t:#E6A100}
+@media(prefers-reduced-motion:reduce){.petal{display:none}}
+body[data-bg="game"][data-theme="formal"] .pl-box{background:#fff;border-top:14px solid var(--t)}
+body[data-bg="game"][data-theme="formal"] .pl-body,body[data-bg="game"][data-theme="formal"] .pl-body li,body[data-bg="game"][data-theme="formal"] .pl-body p{color:#2B2340}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .pl-modal,body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .lb{background:rgba(90,20,55,.72)}
+body[data-bg="game"][data-theme="formal"] .btn,body[data-bg="game"][data-theme="formal"] .btn.ghost{font-size:1rem;padding:14px 24px}
+body[data-bg="game"][data-theme="formal"][data-accent="sakura"] .theme-sw button[aria-pressed=true]{background:#E0457F}
+body[data-bg="game"][data-theme="formal"] .theme-sw button{font-size:.95rem}
+body[data-bg="game"][data-theme="formal"] .spot h3{font-family:Poppins,sans-serif;font-size:1.6rem;color:#B83266}body[data-bg="game"][data-theme="formal"]:not([data-accent="sakura"]) .spot h3{color:#1F3A5F}

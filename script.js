@@ -169,16 +169,20 @@
 var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches,ok=true;try{ok=!sessionStorage.getItem('irp-intro');sessionStorage.setItem('irp-intro','1');}catch(e){}
 if(rm||!ok)return;var o=document.createElement('div');o.className='intro';o.innerHTML='<div><p>MEMUAT PORTOFOLIO</p><i></i></div>';document.body.appendChild(o);setTimeout(function(){o.remove();},2100);})();
 
-(function(){var T=['formal','pixel','sakura'],N={formal:'Formal',pixel:'Pixel',sakura:'Sakura'},IC={formal:['●','■','◆','▲','★','✚'],pixel:['🎮','📊','🌱','🧭','✨','🚀'],sakura:['🌸','📊','🌱','🍃','✨','🎋']},sw=document.createElement('div'),t='formal';
-try{var s=localStorage.getItem('irp-theme');if(T.indexOf(s)>-1)t=s;}catch(e){}
+(function(){var T=['formal','pixel','sakura'],N={formal:'Formal',pixel:'Pixel',sakura:'Sakura'},IC={formal:['●','■','◆','▲','★','✚'],pixel:['🎮','📊','🌱','🧭','✨','🚀'],sakura:['🌸','📊','🌱','🍃','✨','🎋']},sw=document.createElement('div'),t='sakura';
+try{var s=localStorage.getItem('irp-theme2');if(T.indexOf(s)>-1)t=s;}catch(e){}
 sw.className='theme-sw';sw.setAttribute('role','group');sw.setAttribute('aria-label','Pilih tema');
 var tr=document.createElement('div');tr.className='tree';var W=34,H=32,C=[[17,8,8],[9,12,6],[25,12,6],[17,13,7],[5,16,3],[29,16,3]],K=['#F7A6C2','#F7A6C2','#FFD3E2','#EE86AA','#F7A6C2'],o='';
 function r(x,y,f){return '<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+f+'"/>';}
 for(var y=0;y<H;y++)for(var x=0;x<W;x++){var f=0;for(var i=0;i<C.length;i++){var dx=x-C[i][0],dy=y-C[i][1];if(dx*dx+dy*dy<=C[i][2]*C[i][2])f=1;}
 if(f)o+=r(x,y,K[(x*7+y*13+(x*y)%3)%5]);else if(x>=16&&x<=18&&y>=19)o+=r(x,y,y%4?'#6B4452':'#4A2F3A');else if((y===20&&x>=11&&x<=15)||(y===19&&x>=19&&x<=23)||(y===23&&x>=19&&x<=22))o+=r(x,y,'#6B4452');}
 tr.innerHTML='<svg viewBox="0 0 34 32" shape-rendering="crispEdges">'+o+'</svg>';document.body.appendChild(tr);
-function ap(n){t=n;document.body.setAttribute('data-bg','game');document.body.setAttribute('data-theme',n);
+function ap(n){t=n;document.body.setAttribute('data-bg','game');document.body.setAttribute('data-theme',n==='sakura'?'formal':n);document.body.setAttribute('data-accent',n==='sakura'?'sakura':'');
 [].forEach.call(document.querySelectorAll('.qbtn i'),function(e,k){e.textContent=IC[n][k]||'';});
-[].forEach.call(sw.children,function(b){b.setAttribute('aria-pressed',b.dataset.t===n);});try{localStorage.setItem('irp-theme',n);}catch(e){}}
+[].forEach.call(sw.children,function(b){b.setAttribute('aria-pressed',b.dataset.t===n);});try{localStorage.setItem('irp-theme2',n);}catch(e){}}
 T.forEach(function(n){var b=document.createElement('button');b.type='button';b.dataset.t=n;b.textContent=N[n];b.addEventListener('click',function(){ap(n);});sw.appendChild(b);});
 document.body.appendChild(sw);ap(t);})();
+
+(function(){var tr=document.querySelector('.tree');if(tr){var s='<svg viewBox="0 0 300 340"><path d="M150 340C152 290 140 250 150 205C156 170 148 140 158 110" stroke="#6B4452" stroke-width="16" fill="none" stroke-linecap="round"/><path d="M150 230C120 215 100 200 80 170M152 200C185 185 210 170 232 140M156 150C140 130 120 120 100 100" stroke="#6B4452" stroke-width="7" fill="none" stroke-linecap="round"/>',K=['#F9B8CF','#F58FB3','#FFD6E4','#F7A6C2','#FFE8F0'],i,a,d;
+for(i=0;i<46;i++){a=i*2.399;d=18+((i*37)%100);s+='<circle cx="'+(150+Math.cos(a)*d*1.25).toFixed(0)+'" cy="'+(105+Math.sin(a)*d*.85).toFixed(0)+'" r="'+(14+(i*7)%16)+'" fill="'+K[i%5]+'" opacity=".92"/>';}tr.innerHTML=s+'</svg>';}
+var p=document.createElement('div');p.className='petals';for(var k=0;k<16;k++){var e=document.createElement('span');e.className='petal';e.style.cssText='left:'+(k*6.2+Math.random()*3).toFixed(1)+'%;--s:'+(10+Math.random()*10|0)+'px;--d:'+(12+Math.random()*10|0)+'s;--dl:-'+(Math.random()*20|0)+'s';p.appendChild(e);}document.body.appendChild(p);})();
